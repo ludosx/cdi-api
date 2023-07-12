@@ -1,0 +1,11 @@
+$ python3 -m venv .venv
+$ source .venv/bin/activate
+$ pip install fastapi uvicorn sqlalchemy pymysql
+$ pip freeze > requirements.txt
+$ git init
+$ nano .gitignore
+$ uvicorn main:app --reload
+
+
+
+
