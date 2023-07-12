@@ -60,7 +60,7 @@ async def create_post(post: PostBase, db:db_dependency):
 async def read_post(post_id: int, db: db_dependency):
     post = db.query(models.Post).filter(models.Post.id == post_id).first()
     if post is None:
-        HTTPException(status_code=404, detail='Post was not found')
+        raise HTTPException(status_code=404, detail='Post was not found')
     return post
 
 
