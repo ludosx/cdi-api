@@ -1,8 +1,12 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+from dotenv import load_dotenv
+import os
 
-URL_DATABASE = 'mysql+pymysql://root:password@localhost:3306/users_api_db'
+load_dotenv()
+
+URL_DATABASE = os.getenv('MYSQL_URL')
 
 engine = create_engine(URL_DATABASE)
 
